@@ -1,6 +1,6 @@
-##yanexmoney-cms-omnipay
+##yandexmoney-cms-omnipay
 
-Модуль оплаты yanexmoney-omnipay необходим для интеграции с сервисом [Яндекс.Касса](http://kassa.yandex.ru/) на базе [Omnipay](http://omnipay.thephpleague.com/).
+Модуль оплаты yandexmoney-omnipay необходим для интеграции с сервисом [Яндекс.Касса](http://kassa.yandex.ru/) на базе [Omnipay](http://omnipay.thephpleague.com/).
 
  Доступные платежные методы, если вы работаете как юридические лицо:
 * **Банковские карты** -  Visa (включая Electron), MasterCard и Maestro любого банка мира
