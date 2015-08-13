@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\YandexMoney\Message;
+namespace yandexmoney\YandexMoney\Message;
 
 /**
  * YandexMoney Authorize Request

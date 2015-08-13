@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\YandexMoney;
+namespace yandexmoney\YandexMoney;
 
 use Omnipay\Common\AbstractGateway;
 
@@ -145,17 +145,17 @@ class Gateway extends AbstractGateway
 
 	public function authorize(array $parameters = array())
     {
-		return $this->createRequest('\Omnipay\YandexMoney\Message\AuthorizeRequest', $parameters);
+		return $this->createRequest('\yandexmoney\YandexMoney\Message\AuthorizeRequest', $parameters);
     }
     
     public function purchase(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\YandexMoney\Message\PurchaseRequest', $parameters);
+        return $this->createRequest('\yandexmoney\YandexMoney\Message\PurchaseRequest', $parameters);
     }
 
     public function completePurchase(array $parameters = array())
     {
-		return $this->createRequest('\Omnipay\YandexMoney\Message\CompletePurchaseRequest', $parameters);
+		return $this->createRequest('\yandexmoney\YandexMoney\Message\CompletePurchaseRequest', $parameters);
     }
 
 }
