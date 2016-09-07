@@ -17,7 +17,11 @@ class AuthorizeRequest extends PurchaseRequest
 		$data = array();
 		$data['action'] = $this->getAction();
 		if ($this->checkSign()) {
-			$data['code'] = 0;
+		    if (number_format($this->getOrderSumAmount(),2) == number_format($this->getAmount(), 2)){
+                $data['code'] = 0;
+            }else{
+                $data['code'] = 100;
+            }
 		}else {
 			$data['code'] = 1;
 		}
