@@ -113,6 +113,14 @@ class IndividualPurchaseRequest extends IndividualAuthorizeRequest
 		 return $this->getParameter('comment');
 	}
 
+    	public function setShortDest($value)
+    	{
+		return $this->setParameter('short-dest', $value);
+    	}
+	public function getShortDest()
+	{
+		 return $this->getParameter('short-dest');
+	}
 
 	
 	
@@ -122,8 +130,8 @@ class IndividualPurchaseRequest extends IndividualAuthorizeRequest
 		
         $data = array();
 		$data['receiver'] = $this->getAccount();
-		$data['formcomment'] = $this->getFormComment(); 
-		$data['short-dest'] = $this->getFormComment(); 
+		$data['formcomment'] = $this->getFormComment(); // Имя магазина
+		$data['short-dest'] = $this->getShortDest(); // Описание покупки
 		$data['writable-targets'] = 'false';
 		$data['comment-needed'] = 'true';
 		$data['label'] = $this->getOrderId();
@@ -138,8 +146,8 @@ class IndividualPurchaseRequest extends IndividualAuthorizeRequest
 		
 		$data['paymentType'] = $this->getMethod();	
 
-		$data['shopSuccessURL'] = $this->getReturnUrl();
-		$data['shopFailURL'] = $this->getCancelUrl();
+		$data['successURL'] = $this->getReturnUrl();
+		$data['failURL'] = $this->getCancelUrl();
 		
 		return $data;
     }
