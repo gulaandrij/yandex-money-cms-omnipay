@@ -29,9 +29,29 @@ class Gateway extends AbstractGateway
 			'orderNumber' => '',
 			'customerNumber' => '',
 			'returnUrl' => '',
-			'cancelUrl' => ''
+			'cancelUrl' => '',
+            'receipt' => ''
         );
     }
+
+    public function getReceipt($source = false)
+    {
+        if ($source) {
+            return $this->getParameter('receipt');
+        } else {
+            return json_decode($this->getParameter('receipt'));
+        }
+    }
+
+    public function setReceipt($value, $encode = false)
+    {
+        if ($encode || is_array($value)) {
+            return $this->setParameter('receipt', json_encode($value));
+        } else {
+            return $this->setParameter('receipt', $value);
+        }
+    }
+
     public function getPassword()
     {
         return $this->getParameter('password');
@@ -42,7 +62,6 @@ class Gateway extends AbstractGateway
         return $this->setParameter('password', $value);
     }
 
-    
 	public function getShopId()
     {
         return $this->getParameter('shopid');
